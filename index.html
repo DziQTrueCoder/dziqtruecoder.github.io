@@ -33,17 +33,6 @@
 
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-    <script type="text/babel">
-      const getMessage = () => "Hello World";
-      const outputDiv = document.getElementById('output');
-      if (outputDiv) {
-          // Dodajemy tekst "Hello World" do diva #output
-          outputDiv.innerHTML = `<strong>Simple Babel Test:</strong> ${getMessage()}`;
-      } else {
-          console.error("Element with ID 'output' not found for the simple Babel test script.");
-      }
-    </script>
-
     <script type="text/babel" src="main.js"></script>
 
 </body>
