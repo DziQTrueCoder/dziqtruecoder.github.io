@@ -198,37 +198,66 @@ const App = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
 
+     // ****************************************************************
+    // ZMIANA: Użycie ipgeolocation.io
+    // ****************************************************************
     useEffect(() => {
-        fetch('https://ip-api.com/json/?fields=status,message,countryCode')
+        // !!! WAŻNE: Wklej tutaj swój klucz API z ipgeolocation.io !!!
+        const apiKey = "YOUR_API_KEY"; // <--- ZASTĄP TO SWOIM KLUCZEM API!
+
+        if (apiKey === "YOUR_API_KEY") {
+            console.warn("API Key for ipgeolocation.io is missing. Defaulting to English.");
+            setError("API Key missing, defaulting to English.");
+            setLanguage('en');
+            document.documentElement.lang = 'en';
+            // Nie ustawiamy isLoading na false jeszcze, poczekamy na próbę załadowania en.json
+            return; // Zakończ ten effect, przejdź do ładowania tłumaczeń dla 'en'
+        }
+
+        const apiUrl = `https://api.ipgeolocation.io/ipgeo?apiKey=${apiKey}`;
+        console.log("Attempting geolocation with ipgeolocation.io...");
+
+        fetch(apiUrl)
             .then(response => {
                 if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                     // Spróbuj sparsować błąd z API jeśli jest dostępny
+                     return response.json().catch(() => null).then(errorData => {
+                        const errorMsg = errorData?.message || `HTTP error! status: ${response.status}`;
+                        throw new Error(errorMsg);
+                     });
                 }
                 return response.json();
             })
             .then(data => {
-                if (data.status === 'success' && data.countryCode) {
-                    const detectedLang = getLanguageFromCountry(data.countryCode);
+                console.log("ipgeolocation.io API Response:", data);
+                // Sprawdzamy czy odpowiedź zawiera kod kraju (country_code2 dla tego API)
+                if (data && data.country_code2) {
+                    const detectedLang = getLanguageFromCountry(data.country_code2);
+                    console.log(`Country: ${data.country_code2}, Detected Language: ${detectedLang}`);
                     setLanguage(detectedLang);
                     document.documentElement.lang = detectedLang;
                 } else {
+                    console.log("Geolocation success but no country code, defaulting to 'en'. Response:", data);
                     setLanguage('en');
                     document.documentElement.lang = 'en';
                 }
             })
             .catch(e => {
-                console.error("Error fetching geolocation:", e);
-                setError("Could not determine location, defaulting to English.");
+                console.error("Error fetching geolocation from ipgeolocation.io:", e);
+                setError(`Could not determine location (${e.message || 'Unknown error'}). Defaulting to English.`);
                 setLanguage('en');
                 document.documentElement.lang = 'en';
             });
     }, []);
 
+
     useEffect(() => {
         if (!language) return;
 
         setIsLoading(true);
-        setError(null);
+        // Clear previous error *before* fetching
+        // setError(null); // Clearing error here might hide geolocation error if translation load succeeds
+        console.log(`Workspaceing translations for: ${language}`);
         fetch(`/locales/${language}.json`)
             .then(response => {
                 if (!response.ok) {
@@ -238,7 +267,7 @@ const App = () => {
                             if (!fallbackResponse.ok) {
                                 throw new Error(`Fallback en.json also failed! status: ${fallbackResponse.status}`);
                             }
-                            setLanguage('en');
+                            setLanguage('en'); // Ustaw język na 'en' jeśli fallback się udał
                             document.documentElement.lang = 'en';
                             return fallbackResponse.json();
                         });
@@ -249,13 +278,16 @@ const App = () => {
                 return response.json();
             })
             .then(data => {
+                console.log(`Translations loaded for ${language}:`, data);
                 setTranslations(data);
                 document.title = data.pageTitle || 'Konrad Gaca - IT Portfolio';
                 setIsLoading(false);
+                 // Clear error only on successful load
+                setError(null);
             })
             .catch(e => {
                 console.error(`Error fetching or parsing translations for ${language}:`, e);
-                setError(`Could not load translations.`);
+                setError(`Could not load translations. Error: ${e.message}`);
                 setTranslations({});
                 setIsLoading(false);
             });
@@ -266,8 +298,9 @@ const App = () => {
     }
 
     if (error && Object.keys(translations).length === 0) {
-         return <div className="loading-indicator">Error loading translations. Please try again later.</div>;
+         return <div className="loading-indicator">{error} Please try again later.</div>;
     }
+
 
     return (
         <Fragment>
