@@ -158,8 +158,8 @@ const ProjectsSection = ({ t }) => {
 };
 
 const ContactSection = ({ t }) => {
-    const email = "konrad.gaca.dev@gmail.com"; // <- Zmień!
-    const linkedinUrl = "https://www.linkedin.com/in/konrad-gaca/"; // <- Zmień!
+    const email = "konrad.gaca04@gmail.com"; // <- Zmień!
+    const linkedinUrl = "https://www.linkedin.com/in/konrad-gaca-a855a0320/"; // <- Zmień!
     const githubUrl = "https://github.com/DziQTrueCoder/dziqtruecoder.github.io";
 
     return (
