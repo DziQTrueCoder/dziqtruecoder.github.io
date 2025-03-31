@@ -2,42 +2,42 @@
 
 [![GitHub Pages](https://img.shields.io/github/deployments/DziQTrueCoder/dziqtruecoder.github.io/github-pages?label=GitHub%20Pages&logo=github)](https://dziqtruecoder.github.io/)
 
-Live Demo: https://dziqtruecoder.github.io/
+**Live Demo:** [https://dziqtruecoder.github.io/](https://dziqtruecoder.github.io/)
 
-Description
+## Description
 
 This is a personal portfolio website, created as an online showcase for potential employers and individuals interested in my work in the IT industry. It presents my skills, experience gained during studies and project implementation, as well as my career goals. The site is hosted using GitHub Pages.
 
-Features
+## Features
 
-**Single Page Layout:** All key information is available on one page, with smooth scrolling between sections.
- **Responsive Design:** The site adapts to different screen sizes (desktop, tablet, mobile) thanks to the Bootstrap framework.
- **Key Sections:**
+* **Single Page Layout:** All key information is available on one page, with smooth scrolling between sections.
+* **Responsive Design:** The site adapts to different screen sizes (desktop, tablet, mobile) thanks to the Bootstrap framework.
+* **Key Sections:**
     * **Hero Section:** Brief introduction and main tagline.
     * **About Me:** A more detailed description of my profile and motivation.
     * **Competencies/Skills:** Divided into technical and soft skills.
     * **Projects & Experience:** Showcasing past achievements (e.g., Solvehack website, CTF participation).
     * **Contact:** Easy access to contact details and social profiles (LinkedIn, GitHub).
- **Interactive Navigation:** Navigation bar for easy site traversal.
- **Dynamic Components:** Content generated using the React library (loaded via CDN).
+* **Interactive Navigation:** Navigation bar for easy site traversal.
+* **Dynamic Components:** Content generated using the React library (loaded via CDN).
 
-Technologies
+## Technologies
 
 This website was built using the following technologies and tools:
 
 * **HTML5:** Page structure.
 * **CSS3:** Custom styles (`main.css`).
 * **JavaScript (ES6+):** Site logic and DOM manipulation (via React).
-  **React.js (v18 via CDN):** Library for building user interfaces based on components.
- **ReactDOM (v18 via CDN):** Library for rendering React components in the DOM.
-  **Babel Standalone (via CDN):** In-browser JSX to JavaScript transpiler.
- **Bootstrap (v5.3 via CDN):** CSS framework for quickly creating responsive layouts and styling components.
- **Bootstrap Icons (optional, via CDN):** SVG icon library.
- **Git:** Version control system.
- **GitHub Pages:** Hosting platform.
+* **React.js (v18 via CDN):** Library for building user interfaces based on components.
+* **ReactDOM (v18 via CDN):** Library for rendering React components in the DOM.
+* **Babel Standalone (via CDN):** In-browser JSX to JavaScript transpiler.
+* **Bootstrap (v5.3 via CDN):** CSS framework for quickly creating responsive layouts and styling components.
+* **Bootstrap Icons (optional, via CDN):** SVG icon library.
+* **Git:** Version control system.
+* **GitHub Pages:** Hosting platform.
 
- File Structure
- ## Running Locally
+## File Structure
+## Running Locally
 
 Thanks to using CDNs for libraries, the project doesn't require complex setup or a build process. To run the site locally:
 
@@ -63,8 +63,6 @@ Most of the site's content and structure is defined as React components in the `
 
 ## License
 
-(Optional) This project is licensed under the MIT License. It is recommended to add a `LICENSE` file to the repository if you want to formally define the terms of use.
+This project is licensed under the MIT License. It is recommended to add a `LICENSE` file to the repository if you want to formally define the terms of use.
 
 ---
-
-I hope this documentation is helpful! Let me know if you want to change or add anything.
