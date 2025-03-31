@@ -5,7 +5,7 @@
 // Komponent Paska Nawigacji
 const NavigationBar = () => {
     // Zaktualizuj href w 'a.navbar-brand' i tekst, jeśli chcesz
-    const brandName = "Jan Kowalski"; // Zmień na swoje imię i nazwisko
+    const brandName = "Konrad Gaca"; // Zmień na swoje imię i nazwisko
 
     return (
         // Użyto fixed-top, pamiętaj o padding-top w CSS dla body
@@ -42,7 +42,7 @@ const NavigationBar = () => {
 // Komponent Sekcji Hero
 const HeroSection = () => {
     // Zaktualizuj swoje dane
-    const name = "Jan Kowalski";
+    const name = "Konrad Gaca";
     const title = "Ambitny Technik Informatyk | Junior IT Specialist";
     const tagline = "Poszukuję możliwości rozwoju w IT, oferując solidne podstawy w zakresie administracji systemami (Windows/Linux), programowania (Python, C++) oraz praktyczne doświadczenie z projektów webowych i konkursów CTF. Szybko przyswajam wiedzę i jestem zdeterminowany, by efektywnie wspierać cele zespołu technicznego.";
 
@@ -202,7 +202,7 @@ const ContactSection = () => {
 // Komponent Stopki
 const Footer = () => {
     // Zaktualizuj imię i nazwisko
-    const name = "Jan Kowalski";
+    const name = "Konrad Gaca";
     const currentYear = new Date().getFullYear();
 
     return (
