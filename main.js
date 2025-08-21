@@ -1,20 +1,13 @@
-const { useState, useEffect, Fragment } = React; // Import hooks from React global object
-
-// === Helper Function: Get Supported Language ===
-// Sprawdza język przeglądarki i zwraca obsługiwany kod ('pl', 'en', 'de', 'es') lub 'en' jako domyślny
+const { useState, useEffect, Fragment } = React;
 const getSupportedLanguage = () => {
     const supportedLangs = ['pl', 'en', 'de', 'es'];
-    // Pobierz preferowany język przeglądarki (np. "pl-PL", "en-US", "de")
     const browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-    // Wyodrębnij główny kod języka (np. "pl", "en", "de")
     const langCode = browserLang.split('-')[0];
-
-    // Zwróć kod języka, jeśli jest obsługiwany, w przeciwnym razie zwróć 'en'
     return supportedLangs.includes(langCode) ? langCode : 'en';
 };
 
 
-// === Komponenty Sekcji (bez zmian - nadal przyjmują 't' jako props) ===
+
 
 const NavigationBar = ({ t }) => {
     const brandName = t.navbarBrand || "Konrad Gaca";
@@ -198,22 +191,22 @@ const Footer = ({ t }) => {
     );
 }
 
-// === GŁÓWNY KOMPONENT APLIKACJI ===
+
 const App = () => {
     const [language, setLanguage] = useState('en');
     const [translations, setTranslations] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    // Efekt uruchamiany raz przy starcie aplikacji do wykrycia języka przeglądarki
+    
     useEffect(() => {
         const detectedLang = getSupportedLanguage();
         console.log(`Detected browser language preference: ${navigator.language}, Using language: ${detectedLang}`);
         setLanguage(detectedLang);
         document.documentElement.lang = detectedLang;
-    }, []); // Pusta tablica zależności = uruchom tylko raz po zamontowaniu
+    }, []);
 
-    // Efekt do ładowania tłumaczeń, uruchamiany gdy zmieni się stan 'language'
+    
     useEffect(() => {
         if (!language) return;
 
@@ -253,7 +246,7 @@ const App = () => {
             .finally(() => {
                 setIsLoading(false);
             });
-    }, [language]); // Zależność od stanu 'language'
+    }, [language]);
 
     if (isLoading) {
         return <div className="loading-indicator">{translations.loading || 'Loading...'}</div>;
@@ -276,7 +269,7 @@ const App = () => {
     );
 };
 
-// === RENDEROWANIE APLIKACJI ===
+
 const domContainer = document.querySelector('#root');
 
 if (domContainer) {
