@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hackathon: GrowIT - Zbuduj Lepszą Dorosłość</title>
+    <title>GrowIT</title>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -48,9 +48,6 @@
             transform: translateY(-8px);
             border-color: #22c55e;
         }
-        .plumbob {
-            color: #22c55e; /* Brighter Sims Green */
-        }
     </style>
 </head>
 <body>
@@ -64,11 +61,12 @@
         <header className="fixed top-0 left-0 right-0 bg-gray-950/80 backdrop-blur-sm z-50 border-b border-gray-800">
             <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
                 <a href="#" className="text-2xl font-bold text-gray-100">
-                    <span className="plumbob">GrowIT</span>
+                    <span className="text-green-500">GrowIT</span>
                 </a>
                 <div className="hidden md:flex space-x-6 items-center">
                     <a href="#opis" className="text-gray-300 hover:text-blue-400 transition-colors">O co chodzi?</a>
-                    <a href="#mentorzy" className="text-gray-300 hover:text-blue-400 transition-colors">NPC</a>
+                    <a href="#mentorzy" className="text-gray-300 hover:text-blue-400 transition-colors">Mentorzy</a>
+                    <a href="#organizatorzy" className="text-gray-300 hover:text-blue-400 transition-colors">Organizatorzy</a>
                     <a href="#faq" className="text-gray-300 hover:text-blue-400 transition-colors">FAQ</a>
                 </div>
                 <a href="#rejestracja" className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full transition-transform transform hover:scale-105 shadow-lg shadow-green-500/20">
@@ -82,7 +80,7 @@
         <section className="min-h-screen flex items-center justify-center text-center px-4 pt-24 hero-gradient">
             <div className="max-w-4xl">
                 <h1 className="text-5xl md:text-7xl font-black text-white leading-tight mb-4">
-                    Hackathon <span className="plumbob">GrowIT</span>
+                    <span className="text-green-500">GrowIT</span>
                 </h1>
                 <p className="text-xl md:text-2xl font-semibold text-gray-200 mb-8">
                     Hakuj dorosłość – wymyśl lepsze jutro
@@ -103,7 +101,7 @@
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-bold mb-4">O co w tym chodzi?</h2>
                     <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-                        To nie jest zwykły hackathon. To symulator życia, w którym Twoim zadaniem jest stworzenie technologii ułatwiającej przejście przez kolejne etapy dorosłości. Zwiększ swoje "skille", poznaj fantastycznych ludzi i stwórz coś, co naprawdę ma znaczenie.
+                        To nie jest zwykły hackathon. Tutaj Twoim zadaniem jest stworzenie technologii ułatwiającej przejście przez kolejne etapy dorosłości. Zwiększ swoje umiejętności, poznaj fantastycznych ludzi i stwórz coś, co naprawdę ma znaczenie.
                     </p>
                 </div>
                 <div className="grid md:grid-cols-3 gap-8 text-center">
@@ -129,6 +127,7 @@
             <div className="container mx-auto">
                 <div className="grid md:grid-cols-2 gap-10 items-center">
                     <div>
+                        <h3 className="text-2xl font-bold mb-6 text-center">Podstawowe informacje</h3>
                         <p className="text-lg mb-4"><strong className="text-blue-400">Miesiąc wiedzy:</strong> 1-28 Marzec 2026</p>
                         <p className="text-lg mb-4"><strong className="text-blue-400">Finał:</strong> 29-30 Marzec 2026</p>
                         <p className="text-lg mb-4"><strong className="text-blue-400">Lokalizacja:</strong> Online oraz stacjonarnie Kraków</p>
@@ -138,11 +137,11 @@
                     <div className="bg-gray-900 p-8 rounded-xl border border-gray-800">
                         <h3 className="text-2xl font-bold mb-6 text-center">Harmonogram finału</h3>
                         <ul className="space-y-4 text-gray-300">
-                            <li className="flex items-start"><span className="text-blue-400 font-bold w-28 shrink-0">29.03, 09:00</span><span>Wprowadzenie do gry i cele</span></li>
+                            <li className="flex items-start"><span className="text-blue-400 font-bold w-28 shrink-0">29.03, 09:00</span><span>Wprowadzenie do finału</span></li>
                             <li className="flex items-start"><span className="text-blue-400 font-bold w-28 shrink-0">29.03, 10:00</span><span>START! Czas rozwijać projekt.</span></li>
-                            <li className="flex items-start"><span className="text-blue-400 font-bold w-28 shrink-0">29.03, 14:00</span><span>Warsztaty (dodatkowe punkty skilli)</span></li>
+                            <li className="flex items-start"><span className="text-blue-400 font-bold w-28 shrink-0">29.03, 14:00</span><span>Warsztaty</span></li>
                             <li className="flex items-start"><span className="text-blue-400 font-bold w-28 shrink-0">30.03, 10:00</span><span>Koniec czasu!</span></li>
-                            <li className="flex items-start"><span className="text-blue-400 font-bold w-28 shrink-0">30.03, 11:00</span><span>Prezentacja aspiracji życiowych</span></li>
+                            <li className="flex items-start"><span className="text-blue-400 font-bold w-28 shrink-0">30.03, 11:00</span><span>Prezentacje finałowe</span></li>
                             <li className="flex items-start"><span className="text-blue-400 font-bold w-28 shrink-0">30.03, 14:00</span><span>Rozdanie nagród i impreza!</span></li>
                         </ul>
                     </div>
@@ -155,7 +154,7 @@
         <section id="rejestracja" className="py-20 px-4">
             <div className="container mx-auto text-center">
                 <div className="max-w-2xl mx-auto text-left bg-gray-900 p-8 rounded-xl border border-gray-800">
-                    <h3 className="text-2xl font-bold mb-4 text-white">Jak dołączyć do gry?</h3>
+                    <h3 className="text-2xl font-bold mb-4 text-white">Jak dołączyć do hackathonu?</h3>
                     <p className="text-gray-400 mb-6">Wypełnij formularz "Zgłoś się" poniżej. Mamy ograniczoną liczbę miejsc, więc nie czekaj! Udział jest darmowy, nie potrzebujesz pieniędzy.</p>
                 </div>
             </div>
@@ -165,7 +164,7 @@
     const PartnersSection = () => (
         <section id="partnerzy" className="py-20 px-4">
             <div className="container mx-auto text-center">
-                <h2 className="text-4xl font-bold mb-12">Przyjaciele z Sąsiedztwa</h2>
+                <h2 className="text-4xl font-bold mb-12">Nasi sojusznicy</h2>
                 <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
                     <p className="text-2xl font-bold text-gray-500 hover:text-gray-300 transition-colors">LifeSkillz Inc.</p>
                     <p className="text-2xl font-bold text-gray-500 hover:text-gray-300 transition-colors">ZenApp</p>
@@ -188,8 +187,8 @@
             <section id="mentorzy" className="py-20 px-4 bg-gray-950">
                 <div className="container mx-auto">
                     <div className="text-center mb-12">
-                        <h2 className="text-4xl font-bold mb-4">Postacie Niezależne (NPC)</h2>
-                        <p className="text-lg text-gray-400">Nasi mentorzy są jak NPC z misjami pobocznymi - pomogą Ci zdobyć XP i cenne itemy.</p>
+                        <h2 className="text-4xl font-bold mb-4">Mentorzy</h2>
+                        <p className="text-lg text-gray-400">Nasi mentorzy to eksperci w swoich dziedzinach, którzy pomogą Wam rozwinąć projekty.</p>
                     </div>
                     <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
                         {mentors.map(mentor => (
@@ -197,7 +196,38 @@
                                 <img src={mentor.img} alt={mentor.name} className="w-full h-48 object-cover" />
                                 <div className="p-6">
                                     <h3 className="text-xl font-bold text-white">{mentor.name}</h3>
-                                    <p className="plumbob font-semibold">{mentor.title}</p>
+                                    <p className="text-green-500 font-semibold">{mentor.title}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+        );
+    };
+
+    const OrganizersSection = () => {
+        const organizers = [
+            { name: 'Zofia Brzezińska', title: 'Główna Koordynatorka', img: 'https://placehold.co/300x300/111827/22c55e?text=ZB' },
+            { name: 'Kamil Wysocki', title: 'Partnerstwa i Sponsoring', img: 'https://placehold.co/300x300/111827/22c55e?text=KW' },
+            { name: 'Marta Jankowska', title: 'Marketing i Komunikacja', img: 'https://placehold.co/300x300/111827/22c55e?text=MJ' },
+            { name: 'Tomasz Lewandowski', title: 'Logistyka i Operacje', img: 'https://placehold.co/300x300/111827/22c55e?text=TL' },
+        ];
+
+        return (
+            <section id="organizatorzy" className="py-20 px-4">
+                <div className="container mx-auto">
+                    <div className="text-center mb-12">
+                        <h2 className="text-4xl font-bold mb-4">Organizatorzy</h2>
+                        <p className="text-lg text-gray-400">Osoby, które sprawiają, że to wszystko jest możliwe.</p>
+                    </div>
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {organizers.map(organizer => (
+                            <div key={organizer.name} className="bg-gray-900 rounded-xl overflow-hidden text-center card-hover border border-gray-800">
+                                <img src={organizer.img} alt={organizer.name} className="w-full h-48 object-cover" />
+                                <div className="p-6">
+                                    <h3 className="text-xl font-bold text-white">{organizer.name}</h3>
+                                    <p className="text-blue-400 font-semibold">{organizer.title}</p>
                                 </div>
                             </div>
                         ))}
@@ -216,14 +246,16 @@
 
         const faqs = [
             { q: 'Czy muszę mieć drużynę?', a: 'Nie, możesz dołączyć sam i znaleźć zespół na miejscu lub pracować solo.' },
-            { q: 'Czy muszę umieć programować?', a: 'Nie, przyjmujemy każdego - od programisty po planistę projektów. Każda umiejętność jest wartościowa!' }
+            { q: 'Czy muszę umieć programować?', a: 'Nie, szukamy pasjonatów z różnych dziedzin. Zarówno programiści, projektanci, jak i osoby z pomysłami na biznes czy marketing znajdą tu dla siebie miejsce. Najważniejsza jest chęć stworzenia czegoś nowego.' },
+            { q: 'Czy udział w hackathonie jest płatny?', a: 'Udział jest w pełni bezpłatny. Zapewniamy również jedzenie i napoje podczas trwania finału.' },
+            { q: 'Czy zapewniacie nocleg?', a: 'Niestety, nie zapewniamy noclegu. Uczestnicy we własnym zakresie organizują sobie zakwaterowanie.' }
         ];
 
         return (
             <section id="faq" className="py-20 px-4">
                 <div className="container mx-auto max-w-3xl">
                     <div className="text-center mb-12">
-                        <h2 className="text-4xl font-bold mb-4">FAQ (Porady z Ekranu Ładowania)</h2>
+                        <h2 className="text-4xl font-bold mb-4">FAQ</h2>
                     </div>
                     <div className="space-y-4">
                         {faqs.map((faq, index) => (
@@ -250,10 +282,10 @@
     const CommunitySection = () => (
         <section id="community" className="py-20 px-4 text-center bg-gray-950">
             <div className="container mx-auto">
-                <h2 className="text-4xl font-bold mb-4">Odwiedź Nasze Sąsiedztwo</h2>
-                <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">Dołącz do naszego serwera na Discordzie, poznaj innych graczy, stwórz rodzinę i zacznij planować swoją willę (projekt) jeszcze przed startem!</p>
+                <h2 className="text-4xl font-bold mb-4">Poznaj naszą społeczność</h2>
+                <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">Dołącz do naszego serwera na Discordzie, poznaj innych uczestników i zacznij tworzyć zespół jeszcze przed startem!</p>
                 <a href="#" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full transition-colors inline-block shadow-lg shadow-blue-500/20">
-                    Dołącz do Sąsiedztwa
+                    Dołącz do społeczności
                 </a>
             </div>
         </section>
@@ -262,10 +294,7 @@
     const Footer = () => (
         <footer className="py-10 px-4 border-t border-gray-800">
             <div className="container mx-auto text-center text-gray-500">
-                <p>&copy; 2025 GrowIT. Stworzone przez graczy dla graczy.</p>
-                <div className="flex justify-center space-x-6 mt-4">
-                    <a href="#" className="hover:text-blue-400">Social Media</a>
-                </div>
+                <p>&copy; 2025 GrowIT.</p>
             </div>
         </footer>
     );
@@ -282,6 +311,7 @@
                     <RulesSection />
                     <PartnersSection />
                     <MentorsSection />
+                    <OrganizersSection />
                     <FaqSection />
                     <CommunitySection />
                 </main>
