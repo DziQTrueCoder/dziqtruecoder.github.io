@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>GrowIT</title>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- React & Babel CDN -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- React 18 UMD + Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
 
     <style>
         body {
@@ -25,8 +25,13 @@
             color: #f3f4f6; /* Light gray text */
         }
         .hero-gradient {
-            background: radial-gradient(ellipse at top, rgba(37, 99, 235, 0.1), transparent 70%),
-            radial-gradient(ellipse at bottom, rgba(22, 163, 74, 0.1), transparent 70%);
+            background:
+                    radial-gradient(ellipse at top, rgba(37, 99, 235, 0.1), transparent 70%),
+                    radial-gradient(ellipse at bottom, rgba(22, 163, 74, 0.1), transparent 70%);
+        }
+        .section-glow {
+            position: relative;
+            overflow: hidden;
         }
         .section-glow::before {
             content: '';
@@ -51,25 +56,27 @@
     </style>
 </head>
 <body>
-
 <div id="root"></div>
 
 <script type="text/babel">
-
-    // Individual Section Components
     const Header = () => (
         <header className="fixed top-0 left-0 right-0 bg-gray-950/80 backdrop-blur-sm z-50 border-b border-gray-800">
             <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
-                <a href="#" className="text-2xl font-bold text-gray-100">
-                    <span className="text-green-500">GrowIT</span>
+                <a href="#" className="flex items-center" aria-label="Strona główna">
+                    <img src="./logo.png" alt="Logo GrowIT" className="h-12 w-12 object-contain" />
                 </a>
+
                 <div className="hidden md:flex space-x-6 items-center">
                     <a href="#opis" className="text-gray-300 hover:text-blue-400 transition-colors">O co chodzi?</a>
                     <a href="#mentorzy" className="text-gray-300 hover:text-blue-400 transition-colors">Mentorzy</a>
                     <a href="#organizatorzy" className="text-gray-300 hover:text-blue-400 transition-colors">Organizatorzy</a>
                     <a href="#faq" className="text-gray-300 hover:text-blue-400 transition-colors">FAQ</a>
                 </div>
-                <a href="#rejestracja" className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full transition-transform transform hover:scale-105 shadow-lg shadow-green-500/20">
+
+                <a
+                    href="#rejestracja"
+                    className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full transition-transform transform hover:scale-105 shadow-lg shadow-green-500/20"
+                >
                     Zgłoś się
                 </a>
             </nav>
@@ -77,7 +84,7 @@
     );
 
     const HeroSection = () => (
-        <section className="min-h-screen flex items-center justify-center text-center px-4 pt-24 hero-gradient">
+        <section className="min-h-screen flex items-center justify-center text-center px-4 pt-28 hero-gradient">
             <div className="max-w-4xl">
                 <h1 className="text-5xl md:text-7xl font-black text-white leading-tight mb-4">
                     <span className="text-green-500">GrowIT</span>
@@ -86,9 +93,13 @@
                     Hakuj dorosłość – wymyśl lepsze jutro
                 </p>
                 <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-10">
-                    Masz pomysł jak przejść na kolejny level życia? Dołącz do nas i zaprojektuj rozwiązania na prawdziwe wyzwania dorosłości. Czas na hackowanie życia!
+                    Masz pomysł jak przejść na kolejny level życia? Dołącz do nas i zaprojektuj
+                    rozwiązania na prawdziwe wyzwania dorosłości. Czas na hackowanie życia!
                 </p>
-                <a href="#rejestracja" className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-10 text-lg rounded-full transition-transform transform hover:scale-105 inline-block shadow-lg shadow-green-500/20">
+                <a
+                    href="#rejestracja"
+                    className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-10 text-lg rounded-full transition-transform transform hover:scale-105 inline-block shadow-lg shadow-green-500/20"
+                >
                     Zgłoś się
                 </a>
             </div>
@@ -101,21 +112,36 @@
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-bold mb-4">O co w tym chodzi?</h2>
                     <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-                        To nie jest zwykły hackathon. Tutaj Twoim zadaniem jest stworzenie technologii ułatwiającej przejście przez kolejne etapy dorosłości. Zwiększ swoje umiejętności, poznaj fantastycznych ludzi i stwórz coś, co naprawdę ma znaczenie.
+                        To nie jest zwykły hackathon. Tutaj Twoim zadaniem jest stworzenie technologii
+                        ułatwiającej przejście przez kolejne etapy dorosłości. Zwiększ swoje umiejętności,
+                        poznaj fantastycznych ludzi i stwórz coś, co naprawdę ma znaczenie.
                     </p>
                 </div>
+
                 <div className="grid md:grid-cols-3 gap-8 text-center">
                     <div className="bg-gray-900 p-8 rounded-xl border border-gray-800 card-hover">
                         <h3 className="text-2xl font-bold text-blue-400 mb-3">Miesiąc wiedzy</h3>
-                        <p className="text-gray-400">Otrzymasz wsparcie mentora, dostęp do cyfrowego przewodnika z materiałami oraz udział w warsztatach prowadzonych przez ekspertów. Zdobędziesz wiedzę z programowania, zarządzania i realizacji projektów a to wszystko online – i sprawdzisz ją od razu w działaniu.</p>
+                        <p className="text-gray-400">
+                            Otrzymasz wsparcie mentora, dostęp do cyfrowego przewodnika z materiałami oraz udział w
+                            warsztatach prowadzonych przez ekspertów. Zdobędziesz wiedzę z programowania, zarządzania
+                            i realizacji projektów – i sprawdzisz ją od razu w działaniu.
+                        </p>
                     </div>
+
                     <div className="bg-gray-900 p-8 rounded-xl border border-gray-800 card-hover">
                         <h3 className="text-2xl font-bold text-blue-400 mb-3">Top 5 w grze!</h3>
-                        <p className="text-gray-400">Po etapie online wybierzemy pięć drużyn, które najlepiej rozwinęły swoje pomysły. To one wejdą na kolejny poziom i dostaną szansę pokazać pełnię swojego potencjału.</p>
+                        <p className="text-gray-400">
+                            Po etapie online wybierzemy pięć drużyn, które najlepiej rozwinęły swoje pomysły. To one
+                            wejdą na kolejny poziom i dostaną szansę pokazać pełnię swojego potencjału.
+                        </p>
                     </div>
+
                     <div className="bg-gray-900 p-8 rounded-xl border border-gray-800 card-hover">
                         <h3 className="text-2xl font-bold text-blue-400 mb-3">Finał</h3>
-                        <p className="text-gray-400">Finaliści staną na scenie, by pokazać światu swoje rozwiązania przed inwestorami i partnerami z branży. To właśnie wtedy rozstrzygnie się, kto zdobędzie tytuł zwycięzcy hackathonu.</p>
+                        <p className="text-gray-400">
+                            Finaliści staną na scenie, by pokazać światu swoje rozwiązania przed inwestorami i partnerami
+                            z branży. Wtedy rozstrzygnie się, kto zdobędzie tytuł zwycięzcy hackathonu.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -128,21 +154,50 @@
                 <div className="grid md:grid-cols-2 gap-10 items-center">
                     <div>
                         <h3 className="text-2xl font-bold mb-6 text-center">Podstawowe informacje</h3>
-                        <p className="text-lg mb-4"><strong className="text-blue-400">Miesiąc wiedzy:</strong> 1-28 Marzec 2026</p>
-                        <p className="text-lg mb-4"><strong className="text-blue-400">Finał:</strong> 29-30 Marzec 2026</p>
-                        <p className="text-lg mb-4"><strong className="text-blue-400">Lokalizacja:</strong> Online oraz stacjonarnie Kraków</p>
-                        <p className="text-lg mb-4"><strong className="text-blue-400">Dla kogo:</strong> dla każdego w wieku 18-26 lat niezależnie od poziomu doświadczenia</p>
-                        <p className="text-lg"><strong className="text-blue-400">Koszt:</strong> bezpłatnie</p>
+                        <p className="text-lg mb-4">
+                            <strong className="text-blue-400">Miesiąc wiedzy:</strong> 1–28 Marzec 2026
+                        </p>
+                        <p className="text-lg mb-4">
+                            <strong className="text-blue-400">Finał:</strong> 29–30 Marzec 2026
+                        </p>
+                        <p className="text-lg mb-4">
+                            <strong className="text-blue-400">Lokalizacja:</strong> Online oraz stacjonarnie Kraków
+                        </p>
+                        <p className="text-lg mb-4">
+                            <strong className="text-blue-400">Dla kogo:</strong> dla każdego w wieku 18–26 lat niezależnie od poziomu doświadczenia
+                        </p>
+                        <p className="text-lg">
+                            <strong className="text-blue-400">Koszt:</strong> bezpłatnie
+                        </p>
                     </div>
+
                     <div className="bg-gray-900 p-8 rounded-xl border border-gray-800">
                         <h3 className="text-2xl font-bold mb-6 text-center">Harmonogram finału</h3>
                         <ul className="space-y-4 text-gray-300">
-                            <li className="flex items-start"><span className="text-blue-400 font-bold w-28 shrink-0">29.03, 09:00</span><span>Wprowadzenie do finału</span></li>
-                            <li className="flex items-start"><span className="text-blue-400 font-bold w-28 shrink-0">29.03, 10:00</span><span>START! Czas rozwijać projekt.</span></li>
-                            <li className="flex items-start"><span className="text-blue-400 font-bold w-28 shrink-0">29.03, 14:00</span><span>Warsztaty</span></li>
-                            <li className="flex items-start"><span className="text-blue-400 font-bold w-28 shrink-0">30.03, 10:00</span><span>Koniec czasu!</span></li>
-                            <li className="flex items-start"><span className="text-blue-400 font-bold w-28 shrink-0">30.03, 11:00</span><span>Prezentacje finałowe</span></li>
-                            <li className="flex items-start"><span className="text-blue-400 font-bold w-28 shrink-0">30.03, 14:00</span><span>Rozdanie nagród i impreza!</span></li>
+                            <li className="flex items-start">
+                                <span className="text-blue-400 font-bold w-28 shrink-0">29.03, 09:00</span>
+                                <span>Wprowadzenie do finału</span>
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-blue-400 font-bold w-28 shrink-0">29.03, 10:00</span>
+                                <span>START! Czas rozwijać projekt.</span>
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-blue-400 font-bold w-28 shrink-0">29.03, 14:00</span>
+                                <span>Warsztaty</span>
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-blue-400 font-bold w-28 shrink-0">30.03, 10:00</span>
+                                <span>Koniec czasu!</span>
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-blue-400 font-bold w-28 shrink-0">30.03, 11:00</span>
+                                <span>Prezentacje finałowe</span>
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-blue-400 font-bold w-28 shrink-0">30.03, 14:00</span>
+                                <span>Rozdanie nagród i impreza!</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -155,7 +210,10 @@
             <div className="container mx-auto text-center">
                 <div className="max-w-2xl mx-auto text-left bg-gray-900 p-8 rounded-xl border border-gray-800">
                     <h3 className="text-2xl font-bold mb-4 text-white">Jak dołączyć do hackathonu?</h3>
-                    <p className="text-gray-400 mb-6">Wypełnij formularz "Zgłoś się" poniżej. Mamy ograniczoną liczbę miejsc, więc nie czekaj! Udział jest darmowy, nie potrzebujesz pieniędzy.</p>
+                    <p className="text-gray-400 mb-6">
+                        Wypełnij formularz "Zgłoś się" poniżej. Mamy ograniczoną liczbę miejsc, więc nie czekaj!
+                        Udział jest darmowy, nie potrzebujesz pieniędzy.
+                    </p>
                 </div>
             </div>
         </section>
@@ -188,10 +246,13 @@
                 <div className="container mx-auto">
                     <div className="text-center mb-12">
                         <h2 className="text-4xl font-bold mb-4">Mentorzy</h2>
-                        <p className="text-lg text-gray-400">Nasi mentorzy to eksperci w swoich dziedzinach, którzy pomogą Wam rozwinąć projekty.</p>
+                        <p className="text-lg text-gray-400">
+                            Nasi mentorzy to eksperci w swoich dziedzinach, którzy pomogą Wam rozwinąć projekty.
+                        </p>
                     </div>
+
                     <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {mentors.map(mentor => (
+                        {mentors.map((mentor) => (
                             <div key={mentor.name} className="bg-gray-900 rounded-xl overflow-hidden text-center card-hover border border-gray-800">
                                 <img src={mentor.img} alt={mentor.name} className="w-full h-48 object-cover" />
                                 <div className="p-6">
@@ -221,8 +282,9 @@
                         <h2 className="text-4xl font-bold mb-4">Organizatorzy</h2>
                         <p className="text-lg text-gray-400">Osoby, które sprawiają, że to wszystko jest możliwe.</p>
                     </div>
+
                     <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {organizers.map(organizer => (
+                        {organizers.map((organizer) => (
                             <div key={organizer.name} className="bg-gray-900 rounded-xl overflow-hidden text-center card-hover border border-gray-800">
                                 <img src={organizer.img} alt={organizer.name} className="w-full h-48 object-cover" />
                                 <div className="p-6">
@@ -246,9 +308,9 @@
 
         const faqs = [
             { q: 'Czy muszę mieć drużynę?', a: 'Nie, możesz dołączyć sam i znaleźć zespół na miejscu lub pracować solo.' },
-            { q: 'Czy muszę umieć programować?', a: 'Nie, szukamy pasjonatów z różnych dziedzin. Zarówno programiści, projektanci, jak i osoby z pomysłami na biznes czy marketing znajdą tu dla siebie miejsce. Najważniejsza jest chęć stworzenia czegoś nowego.' },
-            { q: 'Czy udział w hackathonie jest płatny?', a: 'Udział jest w pełni bezpłatny. Zapewniamy również jedzenie i napoje podczas trwania finału.' },
-            { q: 'Czy zapewniacie nocleg?', a: 'Niestety, nie zapewniamy noclegu. Uczestnicy we własnym zakresie organizują sobie zakwaterowanie.' }
+            { q: 'Czy muszę umieć programować?', a: 'Nie, szukamy pasjonatów z różnych dziedzin. Programiści, projektanci i osoby z pomysłami na biznes czy marketing znajdą tu dla siebie miejsce.' },
+            { q: 'Czy udział w hackathonie jest płatny?', a: 'Udział jest w pełni bezpłatny. Zapewniamy również jedzenie i napoje podczas finału.' },
+            { q: 'Czy zapewniacie nocleg?', a: 'Niestety, nie zapewniamy noclegu. Uczestnicy we własnym zakresie organizują zakwaterowanie.' },
         ];
 
         return (
@@ -257,15 +319,22 @@
                     <div className="text-center mb-12">
                         <h2 className="text-4xl font-bold mb-4">FAQ</h2>
                     </div>
+
                     <div className="space-y-4">
                         {faqs.map((faq, index) => (
                             <div key={index} className="bg-gray-900 rounded-lg border border-gray-800">
-                                <button onClick={() => toggleFaq(index)} className="w-full text-left p-6 flex justify-between items-center text-gray-100">
+                                <button
+                                    onClick={() => toggleFaq(index)}
+                                    className="w-full text-left p-6 flex justify-between items-center text-gray-100"
+                                >
                                     <span className="font-semibold text-lg">{faq.q}</span>
                                     <span className={`transform transition-transform text-blue-400 ${openFaq === index ? 'rotate-180' : ''}`}>
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-                                        </span>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </span>
                                 </button>
+
                                 {openFaq === index && (
                                     <div className="p-6 pt-0 text-gray-400">
                                         <p>{faq.a}</p>
@@ -283,8 +352,13 @@
         <section id="community" className="py-20 px-4 text-center bg-gray-950">
             <div className="container mx-auto">
                 <h2 className="text-4xl font-bold mb-4">Poznaj naszą społeczność</h2>
-                <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">Dołącz do naszego serwera na Discordzie, poznaj innych uczestników i zacznij tworzyć zespół jeszcze przed startem!</p>
-                <a href="#" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full transition-colors inline-block shadow-lg shadow-blue-500/20">
+                <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
+                    Dołącz do naszego serwera na Discordzie, poznaj innych uczestników i zacznij tworzyć zespół jeszcze przed startem!
+                </p>
+                <a
+                    href="#"
+                    className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full transition-colors inline-block shadow-lg shadow-blue-500/20"
+                >
                     Dołącz do społeczności
                 </a>
             </div>
@@ -299,31 +373,27 @@
         </footer>
     );
 
-    // Main App Component
-    const App = () => {
-        return (
-            <React.Fragment>
-                <Header />
-                <main>
-                    <HeroSection />
-                    <EventDescription />
-                    <PracticalInfo />
-                    <RulesSection />
-                    <PartnersSection />
-                    <MentorsSection />
-                    <OrganizersSection />
-                    <FaqSection />
-                    <CommunitySection />
-                </main>
-                <Footer />
-            </React.Fragment>
-        );
-    };
+    const App = () => (
+        <React.Fragment>
+            <Header />
+            <main>
+                <HeroSection />
+                <EventDescription />
+                <PracticalInfo />
+                <RulesSection />
+                <PartnersSection />
+                <MentorsSection />
+                <OrganizersSection />
+                <FaqSection />
+                <CommunitySection />
+            </main>
+            <Footer />
+        </React.Fragment>
+    );
 
-    // Render the App
-    ReactDOM.render(<App />, document.getElementById('root'));
-
+    // Render (React 18)
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
 </script>
-
 </body>
 </html>
