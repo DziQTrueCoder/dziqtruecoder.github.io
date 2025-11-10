@@ -69,7 +69,6 @@
 
                 <div className="hidden md:flex space-x-6 items-center">
                     <a href="#opis" className="text-gray-300 hover:text-blue-400 transition-colors">O co chodzi?</a>
-                    <a href="#mentorzy" className="text-gray-300 hover:text-blue-400 transition-colors">Mentorzy</a>
                     <a href="#organizatorzy" className="text-gray-300 hover:text-blue-400 transition-colors">Organizatorzy</a>
                     <a href="#faq" className="text-gray-300 hover:text-blue-400 transition-colors">FAQ</a>
                 </div>
@@ -234,40 +233,6 @@
         </section>
     );
 
-    const MentorsSection = () => {
-        const mentors = [
-            { name: 'Anna Kowalska', title: 'Guru Kariery', img: 'https://placehold.co/300x300/111827/22c55e?text=AK' },
-            { name: 'Jan Nowak', title: 'Mistrz Zen', img: 'https://placehold.co/300x300/111827/22c55e?text=JN' },
-            { name: 'Ewa Wiśniewska', title: 'Ekspert od Relacji', img: 'https://placehold.co/300x300/111827/22c55e?text=EW' },
-            { name: 'Piotr Zieliński', title: 'Czarodziej Finansów', img: 'https://placehold.co/300x300/111827/22c55e?text=PZ' },
-        ];
-
-        return (
-            <section id="mentorzy" className="py-20 px-4 bg-gray-950">
-                <div className="container mx-auto">
-                    <div className="text-center mb-12">
-                        <h2 className="text-4xl font-bold mb-4">Mentorzy</h2>
-                        <p className="text-lg text-gray-400">
-                            Nasi mentorzy to eksperci w swoich dziedzinach, którzy pomogą Wam rozwinąć projekty.
-                        </p>
-                    </div>
-
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {mentors.map((mentor) => (
-                            <div key={mentor.name} className="bg-gray-900 rounded-xl overflow-hidden text-center card-hover border border-gray-800">
-                                <img src={mentor.img} alt={mentor.name} className="w-full h-48 object-cover" />
-                                <div className="p-6">
-                                    <h3 className="text-xl font-bold text-white">{mentor.name}</h3>
-                                    <p className="text-green-500 font-semibold">{mentor.title}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-        );
-    };
-
     const OrganizersSection = () => {
         const organizers = [
             { name: 'Zofia Hardek',  img: 'satp.jpg' },
@@ -383,7 +348,6 @@
                 <PracticalInfo />
                 <RulesSection />
                 <PartnersSection />
-                <MentorsSection />
                 <OrganizersSection />
                 <FaqSection />
                 <CommunitySection />
