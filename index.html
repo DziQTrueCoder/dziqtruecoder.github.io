@@ -60,7 +60,6 @@
         <header className="fixed top-0 left-0 right-0 bg-gray-950/80 backdrop-blur-sm z-50 border-b border-gray-800">
             <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
                 <a href="#" className="flex items-center" aria-label="Strona główna">
-                    {/* ZMIANA 2: Zmieniono src logo na ikonę z przezroczystym tłem */}
                     <img src="https://cdn-icons-png.flaticon.com/512/4549/4549283.png" alt="Logo GrowIT" className="h-12 w-12 object-contain" />
                 </a>
 
@@ -117,7 +116,8 @@
 
                 <div className="grid md:grid-cols-3 gap-8 text-center">
                     <div className="bg-gray-900 p-8 rounded-xl border border-gray-800 card-hover">
-                        <h3 className="text-2xl font-bold text-blue-400 mb-3">Miesiąc wiedzy</h3>
+                        {/* ZMIANA: Zmiana nazwy "Miesiąc wiedzy" na "Improvement" */}
+                        <h3 className="text-2xl font-bold text-blue-400 mb-3">Improvement</h3>
                         <p className="text-gray-400">
                             Otrzymasz wsparcie mentora, dostęp do cyfrowego przewodnika z materiałami oraz udział w
                             warsztatach prowadzonych przez ekspertów. Zdobędziesz wiedzę z programowania, zarządzania
@@ -151,15 +151,18 @@
                 <div className="grid md:grid-cols-2 gap-10 items-center">
                     <div>
                         <h3 className="text-2xl font-bold mb-6 text-center">Podstawowe informacje</h3>
-                        {/* ZMIANA 3: Poprawiono daty z marca na kwiecień */}
+                        {/* ZMIANA: Zaktualizowane daty */}
                         <p className="text-lg mb-4">
-                            <strong className="text-blue-400">Miesiąc wiedzy:</strong> 1–28 Kwiecień 2026
+                            <strong className="text-blue-400">Rekrutacja:</strong> 1.01 – 20.02.2026
                         </p>
                         <p className="text-lg mb-4">
-                            <strong className="text-blue-400">Finał:</strong> 29–30 Kwiecień 2026
+                            <strong className="text-blue-400">Improvement:</strong> 1.03 – 28.03.2026
                         </p>
                         <p className="text-lg mb-4">
-                            <strong className="text-blue-400">Lokalizacja:</strong> Online oraz stacjonarnie Kraków
+                            <strong className="text-blue-400">Finał:</strong> 11.04.2026
+                        </p>
+                        <p className="text-lg mb-4">
+                            <strong className="text-blue-400">Lokalizacja:</strong> Online (Improvement) oraz stacjonarnie Kraków (Finał)
                         </p>
                         <p className="text-lg mb-4">
                             <strong className="text-blue-400">Dla kogo:</strong> dla każdego w wieku 18–26 lat niezależnie od poziomu doświadczenia
@@ -170,32 +173,40 @@
                     </div>
 
                     <div className="bg-gray-900 p-8 rounded-xl border border-gray-800">
-                        <h3 className="text-2xl font-bold mb-6 text-center">Harmonogram finału</h3>
+                        <h3 className="text-2xl font-bold mb-6 text-center">Harmonogram finału (11.04)</h3>
+                        {/* ZMIANA: Zaktualizowany harmonogram finału */}
                         <ul className="space-y-4 text-gray-300">
-                            {/* ZMIANA 3: Poprawiono daty z marca na kwiecień */}
                             <li className="flex items-start">
-                                <span className="text-blue-400 font-bold w-28 shrink-0">29.04, 09:00</span>
-                                <span>Wprowadzenie do finału</span>
+                                <span className="text-blue-400 font-bold w-28 shrink-0">11:15–11:30</span>
+                                <span>Networking</span>
                             </li>
                             <li className="flex items-start">
-                                <span className="text-blue-400 font-bold w-28 shrink-0">29.04, 10:00</span>
-                                <span>START! Czas rozwijać projekt.</span>
+                                <span className="text-blue-400 font-bold w-28 shrink-0">11:30–12:30</span>
+                                <span>Prezentacje projektów (3–5 min PitchDeck + 5 min pytania jurorów)</span>
                             </li>
                             <li className="flex items-start">
-                                <span className="text-blue-400 font-bold w-28 shrink-0">29.04, 14:00</span>
-                                <span>Warsztaty</span>
+                                <span className="text-blue-400 font-bold w-28 shrink-0">12:30–13:00</span>
+                                <span>Przerwa obiadowa & networking</span>
                             </li>
                             <li className="flex items-start">
-                                <span className="text-blue-400 font-bold w-28 shrink-0">30.04, 10:00</span>
-                                <span>Koniec czasu!</span>
+                                <span className="text-blue-400 font-bold w-28 shrink-0">13:00–14:00</span>
+                                <span>Prelekcja gościa z inkubatora biznesu / akceleratora</span>
                             </li>
                             <li className="flex items-start">
-                                <span className="text-blue-400 font-bold w-28 shrink-0">30.04, 11:00</span>
-                                <span>Prezentacje finałowe</span>
+                                <span className="text-blue-400 font-bold w-28 shrink-0">14:00–15:00</span>
+                                <span>Krótkie wystąpienia startupowców i founderów (4x15 min)</span>
                             </li>
                             <li className="flex items-start">
-                                <span className="text-blue-400 font-bold w-28 shrink-0">30.04, 14:00</span>
-                                <span>Rozdanie nagród i impreza!</span>
+                                <span className="text-blue-400 font-bold w-28 shrink-0">15:00–15:15</span>
+                                <span>Ogłoszenie wyników i wystąpienia sponsorów</span>
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-blue-400 font-bold w-28 shrink-0">15:15–15:30</span>
+                                <span>Ceremonia zamknięcia z udziałem zaproszonego gościa</span>
+                            </li>
+                             <li className="flex items-start">
+                                <span className="text-blue-400 font-bold w-28 shrink-0">15:30–16:30</span>
+                                <span>Networking i zakończenie wydarzenia</span>
                             </li>
                         </ul>
                     </div>
@@ -210,7 +221,7 @@
                 <div className="max-w-2xl mx-auto text-left bg-gray-900 p-8 rounded-xl border border-gray-800">
                     <h3 className="text-2xl font-bold mb-4 text-white">Jak dołączyć do hackathonu?</h3>
                     <p className="text-gray-400 mb-6">
-                        Wypełnij formularz "Zgłoś się" poniżej. Mamy ograniczoną liczbę miejsc, więc nie czekaj!
+                        Rekrutacja trwa od 1.01 do 20.02. Mamy ograniczoną liczbę miejsc, więc nie czekaj!
                         Udział jest darmowy, nie potrzebujesz pieniędzy.
                     </p>
                 </div>
@@ -227,7 +238,6 @@
                     <p className="text-2xl font-bold text-gray-500 hover:text-gray-300 transition-colors">ZenApp</p>
                     <p className="text-2xl font-bold text-gray-500 hover:text-gray-300 transition-colors">FuturePath</p>
                     <p className="text-2xl font-bold text-gray-500 hover:text-gray-300 transition-colors">ConnectU</p>
-                    {/* ZMIANA 5: Dodano Deepkind jako partnera */}
                     <p className="text-2xl font-bold text-gray-500 hover:text-gray-300 transition-colors">Deepkind</p>
                 </div>
             </div>
@@ -235,7 +245,6 @@
     );
 
     const OrganizersSection = () => {
-        {/* ZMIANA 1: Zaktualizowano listę organizatorów o tytuły */}
         const organizers = [
             { name: 'Zofia Hardek',    img: 'satp.jpg', title: 'Główna organizatorka | Electronics & Telecommunications' },
             { name: 'Tatiana Klimenko', img: 'TK.jpg',   title: 'Koordynatorka ds. Wsparcia i Zdrowia Psychicznego' },
@@ -257,14 +266,10 @@
                                 key={organizer.name}
                                 className="bg-gray-900 rounded-xl overflow-hidden text-center card-hover border border-gray-800"
                             >
-                                {/* ZMIANA 1: Dodanie komentarza w kodzie dla Tatiany (zgodnie z prośbą) */}
-                                {organizer.name === 'Tatiana Klimenko' && (
-                                    /* Tatiana lubi furrasy */
-                                )}
+                                {/* Tatiana lubi furrasy */}
                                 <img src={organizer.img} alt={organizer.name} className="w-full h-48 object-cover" />
                                 <div className="p-6">
                                     <h3 className="text-xl font-bold text-white">{organizer.name}</h3>
-                                    {/* ZMIANA 1: Wyświetlanie tytułu organizatora */}
                                     <p className="text-blue-400 font-semibold">{organizer.title}</p>
                                 </div>
                             </div>
@@ -282,13 +287,12 @@
             setOpenFaq(openFaq === index ? null : index);
         };
 
-        {/* ZMIANY 4, 6, 7: Usunięto pytanie o nocleg, dodano pytania o uczestników i szkolenia */}
         const faqs = [
             { q: 'Czy muszę mieć drużynę?', a: 'Nie, możesz dołączyć sam i znaleźć zespół na miejscu lub pracować solo.' },
             { q: 'Czy muszę umieć programować?', a: 'Nie, szukamy pasjonatów z różnych dziedzin. Programiści, projektanci i osoby z pomysłami na biznes czy marketing znajdą tu dla siebie miejsce.' },
             { q: 'Czy udział w hackathonie jest płatny?', a: 'Udział jest w pełni bezpłatny. Zapewniamy również jedzenie i napoje podczas finału.' },
             { q: 'Kto może wziąć udział?', a: 'Hackathon jest dla każdego w wieku 18–26 lat, niezależnie od poziomu doświadczenia.' },
-            { q: 'W jakich obszarach są prowadzone szkolenia?', a: 'Podczas "Miesiąca wiedzy" zdobędziesz wiedzę z programowania, zarządzania i realizacji projektów. Będą to warsztaty prowadzone przez ekspertów.' },
+            { q: 'Na czym polega faza "Improvement"?', a: 'Podczas fazy "Improvement" (1.03-28.03) zdobędziesz wiedzę z programowania, zarządzania i realizacji projektów. Będą to warsztaty prowadzone przez ekspertów.' },
         ];
 
         return (
@@ -346,7 +350,7 @@
     const Footer = () => (
         <footer className="py-10 px-4 border-t border-gray-800">
             <div className="container mx-auto text-center text-gray-500">
-                <p>&copy; 2025 GrowIT.</p>
+                <p>&copy; 2026 GrowIT.</p> {/* Zaktualizowałem rok na 2026, pasuje do dat */}
             </div>
         </footer>
     );
