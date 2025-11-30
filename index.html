@@ -3,24 +3,19 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>GrowUp</title>
+    <title>GrowUp Hackathon</title>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- React & ReactDOM -->
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
     
-    <!-- Babel -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
 
-    <!-- Phosphor Icons (for cool icons) -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <style>
@@ -453,6 +448,9 @@
             { name: 'Tatiana Klimenko', role: 'Koordynacja & Wsparcie', desc: 'Zdrowie Psychiczne', img: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Tatiana' },
             { name: 'Konrad Gaca', role: 'Tech Lead', desc: 'Ogarnia wszystko jak może', img: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Konrad' },
             { name: 'Julia Małgorzata', role: 'Head of Marketing', desc: 'Rekrutacja & PR', img: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Julia' },
+            { name: 'Dominika Cekała', role: 'Event Manager', desc: 'Logistyka & Organizacja', img: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Dominika' },
+            { name: 'Regina Pashkevych', role: 'Community Manager', desc: 'Relacje z uczestnikami', img: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Regina' },
+            { name: 'Anastasiia Kononenko', role: 'Creative Support', desc: 'Design & Wsparcie', img: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Anastasiia' },
         ];
 
         return (
@@ -463,10 +461,10 @@
                         <p className="text-gray-400">Jesteśmy tu dla Was</p>
                     </div>
 
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                    <div className="flex flex-wrap justify-center gap-8 mb-16">
                         {team.map((person, i) => (
-                            <div key={i} className="bg-gray-950 p-6 rounded-2xl border border-gray-800 text-center hover:border-green-500/30 transition-colors">
-                                <img src={person.img} alt={person.name} className="w-24 h-24 rounded-full mx-auto mb-4 bg-gray-800" />
+                            <div key={i} className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-2rem)] bg-gray-950 p-6 rounded-2xl border border-gray-800 text-center hover:border-green-500/30 transition-colors flex flex-col items-center">
+                                <img src={person.img} alt={person.name} className="w-24 h-24 rounded-full mb-4 bg-gray-800 object-cover" />
                                 <h3 className="font-bold text-white text-lg">{person.name}</h3>
                                 <p className="text-green-500 text-sm font-medium mb-1">{person.role}</p>
                                 <p className="text-gray-500 text-xs">{person.desc}</p>
