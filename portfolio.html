@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DziQTrueCoder | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #050505;
+            --primary: #00f3ff;
+            --secondary: #bd00ff;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, h5, h6, .navbar-brand, .code-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-color);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--secondary);
+            border-radius: 4px;
+        }
+        .navbar {
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 0;
+        }
+        .navbar-brand span {
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+        }
+        .nav-link {
+            color: var(--text-secondary) !important;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary) !important;
+            text-shadow: 0 0 8px var(--primary);
+        }
+        section {
+            position: relative;
+            z-index: 1;
+        }
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .glitch-text {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, var(--text-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .typed-cursor {
+            color: var(--secondary);
+        }
+        .cyber-btn {
+            display: inline-block;
+            padding: 12px 35px;
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            margin-top: 2rem;
+        }
+        .cyber-btn:hover {
+            background: rgba(0, 243, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+            color: #fff;
+            border-color: #fff;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+            margin: 10px auto 0;
+            box-shadow: 0 0 10px var(--secondary);
+        }
+        .cyber-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(5px);
+            padding: 2rem;
+            border-radius: 4px;
+            transition: 0.4s;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .cyber-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+        }
+        .cyber-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2px;
+            height: 0;
+            background: var(--primary);
+            transition: 0.4s;
+        }
+        .cyber-card:hover::before {
+            height: 100%;
+        }
+        .progress-container {
+            margin-bottom: 1.5rem;
+        }
+        .progress {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 0;
+            overflow: visible;
+        }
+        .progress-bar {
+            background-color: var(--secondary);
+            position: relative;
+            box-shadow: 0 0 10px var(--secondary);
+            border-radius: 0;
+        }
+        .tech-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            margin: 0 5px 5px 0;
+            font-size: 0.8rem;
+            border: 1px solid var(--glass-border);
+            color: var(--text-secondary);
+            font-family: 'JetBrains Mono', monospace;
+        }
+        footer {
+            border-top: 1px solid var(--glass-border);
+            padding: 2rem 0;
+            background: rgba(0,0,0,0.8);
+            margin-top: 5rem;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .glitch-text { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body data-bs-theme="dark">
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+
+        const DATA = {
+            hero: {
+                heading: "DziQTrueCoder",
+                subheadings: ["Web Developer", "CyberSec Enthusiast", "CTF Player", "Student"],
+                description: "Building secure, responsive, and dynamic digital experiences. Exploring the intersection of code and security."
+            },
+            about: {
+                content: "Jestem pasjonatem technologii i bezpieczeństwa sieciowego. Tworzę to portfolio, aby zaprezentować moje umiejętności zdobyte podczas studiów i realizacji projektów. Mój cel to rozwój w branży IT, ze szczególnym naciskiem na Web Development i Cyber Security."
+            },
+            skills: {
+                tech: [
+                    { name: "HTML5 / CSS3", val: 95 },
+                    { name: "JavaScript (ES6+)", val: 85 },
+                    { name: "React.js", val: 75 },
+                    { name: "Python", val: 80 },
+                    { name: "Git / GitHub", val: 85 },
+                    { name: "Bootstrap 5", val: 90 }
+                ],
+                soft: ["Teamwork", "Problem Solving", "Adaptability", "Communication", "Time Management"]
+            },
+            projects: [
+                {
+                    title: "Solvehack Website",
+                    desc: "Strona internetowa stworzona na hackathon Solvehack. Responsywny design, dynamiczne komponenty i nowoczesny layout.",
+                    tags: ["React", "Bootstrap", "UX/UI"]
+                },
+                {
+                    title: "CTF Participation",
+                    desc: "Aktywny udział w zawodach Capture The Flag. Rozwiązywanie zadań z zakresu kryptografii, inżynierii wstecznej i web security.",
+                    tags: ["CyberSec", "Python", "Forensics"]
+                },
+                {
+                    title: "Personal Portfolio",
+                    desc: "Single Page Application (SPA) hostowana na GitHub Pages. Zbudowana w React.js bez procesu buildowania, z pełnym CI/CD.",
+                    tags: ["React", "SPA", "GitHub Pages"]
+                }
+            ],
+            contact: {
+                email: "contact@dziqtruecoder.com",
+                github: "https://github.com/DziQTrueCoder",
+                linkedin: "https://linkedin.com"
+            }
+        };
+
+        const Navigation = () => (
+            <nav className="navbar navbar-expand-lg fixed-top">
+                <div className="container">
+                    <a className="navbar-brand fw-bold" href="#">
+                        DziQ<span>True</span>Coder
+                    </a>
+                    <button className="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="collapse navbar-collapse justify-content-end" id="nav">
+                        <ul className="navbar-nav">
+                            {['About', 'Skills', 'Projects', 'Contact'].map(link => (
+                                <li className="nav-item" key={link}>
+                                    <a className="nav-link" href={`#${link.toLowerCase()
